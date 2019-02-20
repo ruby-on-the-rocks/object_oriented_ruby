@@ -18,6 +18,9 @@ puts "#{employee2[:first_name]} #{employee2[:last_name]} makes #{employee2[:sala
 
 # Employee as an instance of a class
 class Employee
+  attr_reader :first_name, :last_name, :active
+  attr_writer :active, :first_name
+
   def initialize(input_first_name, input_last_name, input_salary, input_active)
     @first_name = input_first_name
     @last_name = input_last_name
@@ -31,18 +34,6 @@ class Employee
 
   def give_annual_raise
     @salary = 1.05 * @salary
-  end
-
-  def first_name
-    return @first_name
-  end
-
-  def last_name
-    return @last_name
-  end
-
-  def first_name=(input_name)
-    @first_name = input_name
   end
 end
 
