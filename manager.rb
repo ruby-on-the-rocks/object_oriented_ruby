@@ -19,6 +19,11 @@ class Employee
 end
 
 class Manager < Employee
+  def initialize(input_options_hash)
+    super(input_options_hash)
+    @employees = input_options_hash[:employees]
+  end
+
   def send_report
     puts "Sending email..."
     # Code to send actual email...
@@ -26,6 +31,10 @@ class Manager < Employee
   end
 end
 
-manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true)
+employee1 = Employee.new({first_name: "Majora", last_name: "Carter", salary: 80000, active: true})
+employee2 = Employee.new(salary: 70000, first_name: "Danilo", last_name: "Campos", active: true)
+
+manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
 p manager.first_name
 manager.send_report
+p manager
