@@ -36,6 +36,16 @@ class Manager < Employee
       employee.give_annual_raise
     end
   end
+
+  def fire_all_employees
+    puts "Gonna fire all employees"
+    index = 0
+    @employees.length.times do
+      employee = @employees[index]
+      employee.active = false
+      index = index + 1
+    end
+  end
 end
 
 employee1 = Employee.new({first_name: "Majora", last_name: "Carter", salary: 80000, active: true})
@@ -47,4 +57,7 @@ manager.send_report
 p manager
 
 manager.give_all_raises
+p manager
+
+manager.fire_all_employees
 p manager
