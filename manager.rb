@@ -32,11 +32,8 @@ class Manager < Employee
 
   def give_all_raises
     puts "Gonna give_all_raises"
-    index = 0
-    @employees.length.times do
-      employee = @employees[index]
+    @employees.each do |employee|
       employee.give_annual_raise
-      index = index + 1
     end
   end
 end
