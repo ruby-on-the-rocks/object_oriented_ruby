@@ -18,6 +18,12 @@ class Vehicle
 end
 
 class Car < Vehicle
+  def initialize(input_make, input_model)
+    super()
+    @make = input_make
+    @model = input_model
+  end
+
   def honk_horn
     puts "Beeeeeeep!"
   end
@@ -29,7 +35,7 @@ class Bike < Vehicle
   end
 end
 
-my_car = Car.new()
+my_car = Car.new("Ford", "Explorer")
 p my_car
 my_car.accelerate
 p my_car
