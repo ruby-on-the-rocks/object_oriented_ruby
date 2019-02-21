@@ -29,6 +29,16 @@ class Manager < Employee
     # Code to send actual email...
     puts "Email sent!"
   end
+
+  def give_all_raises
+    puts "Gonna give_all_raises"
+    index = 0
+    @employees.length.times do
+      employee = @employees[index]
+      employee.give_annual_raise
+      index = index + 1
+    end
+  end
 end
 
 employee1 = Employee.new({first_name: "Majora", last_name: "Carter", salary: 80000, active: true})
@@ -37,4 +47,7 @@ employee2 = Employee.new(salary: 70000, first_name: "Danilo", last_name: "Campos
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
 p manager.first_name
 manager.send_report
+p manager
+
+manager.give_all_raises
 p manager
